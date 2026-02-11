@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://nizarul-islam-prince.github.io/sitemap.xml
