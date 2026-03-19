@@ -42,6 +42,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 h1,
@@ -133,6 +134,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  gap: 16px;
 }
 
 .logo {
@@ -140,6 +142,7 @@ a:hover {
   align-items: center;
   gap: 12px;
   transition: var(--transition);
+  min-width: 0;
 }
 
 .logo:hover {
@@ -167,6 +170,7 @@ a:hover {
   color: var(--text);
   letter-spacing: -0.5px;
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .logo:hover .logo-text {
@@ -236,6 +240,7 @@ a:hover {
   background: none;
   border: none;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .menu-toggle span,
@@ -274,6 +279,8 @@ a:hover {
   padding: 30px 20px;
   gap: 12px;
   z-index: 999;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
 }
 
 .mobile-link {
@@ -455,6 +462,18 @@ a:hover {
 
 .hero-image {
   position: relative;
+}
+
+.hero-text,
+.project-card,
+.service-card,
+.contact-card {
+  min-width: 0;
+}
+
+.hero-text h1,
+.contact-card a {
+  overflow-wrap: anywhere;
 }
 
 .image-wrapper {
@@ -924,6 +943,11 @@ a:hover {
     gap: 20px;
   }
 
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
   h1 {
     font-size: 2.5rem;
   }
@@ -994,6 +1018,18 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .portfolio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 28px 24px;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -1001,6 +1037,11 @@ a:hover {
 
   .section-header {
     margin-bottom: 40px;
+  }
+
+  .scroll-to-top {
+    right: 20px;
+    bottom: 20px;
   }
 }
 
@@ -1027,6 +1068,8 @@ a:hover {
 
   .hero-badge {
     font-size: 0.8rem;
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-subtitle {
@@ -1053,12 +1096,9 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
-  .nav-link {
-    gap: 12px;
-  }
-
   .logo {
     gap: 8px;
+    max-width: calc(100% - 56px);
   }
 
   .logo-img {
@@ -1069,6 +1109,25 @@ a:hover {
   }
 
   .logo-text {
-    font-size: 1.5rem;
+    font-size: 1.05rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero-actions,
+  .project-tags {
+    gap: 10px;
+  }
+
+  .service-card,
+  .project-card,
+  .contact-card,
+  .feature-box {
+    padding: 22px 18px;
+  }
+
+  .scroll-to-top {
+    width: 44px;
+    height: 44px;
   }
 }

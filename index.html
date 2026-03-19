@@ -83,14 +83,20 @@
           <a href="#contact" class="nav-link nav-btn">Get Started</a>
         </nav>
 
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button
+          class="menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          type="button"
+        >
           <span></span>
         </button>
       </div>
     </header>
 
     <!-- MOBILE MENU -->
-    <div class="mobile-menu">
+    <div class="mobile-menu" id="mobile-menu">
       <a href="#about" class="mobile-link">About</a>
       <a href="#networking" class="mobile-link">Networking</a>
       <a href="#services" class="mobile-link">Services</a>
@@ -615,9 +621,9 @@
           <a href="#portfolio">Portfolio</a>
           <a href="#contact">Contact</a>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2026 Mohammad Nizarul Islam Prince. All rights reserved.</p>
-        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Mohammad Nizarul Islam Prince. All rights reserved.</p>
       </div>
     </footer>
 

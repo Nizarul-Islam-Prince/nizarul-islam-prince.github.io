@@ -3,24 +3,33 @@ const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileLinks = document.querySelectorAll(".mobile-link");
 
+const setMenuState = (isOpen) => {
+  mobileMenu.classList.toggle("active", isOpen);
+  menuToggle.classList.toggle("active", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+};
+
 menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("active");
-  menuToggle.classList.toggle("active");
+  setMenuState(!mobileMenu.classList.contains("active"));
 });
 
 // Close mobile menu when a link is clicked
 mobileLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-    menuToggle.classList.remove("active");
+    setMenuState(false);
   });
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".menu-toggle") && !e.target.closest(".mobile-menu")) {
-    mobileMenu.classList.remove("active");
-    menuToggle.classList.remove("active");
+    setMenuState(false);
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    setMenuState(false);
   }
 });
 
